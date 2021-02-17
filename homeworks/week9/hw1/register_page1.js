@@ -18,26 +18,23 @@ document.querySelector(".submit_btn").addEventListener("click", (e) => {
 		return; /*終止發Api */
 	}
 	console.log(nickname, username, password);
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", `${API_Url}/register`, true);
-	xhr.setRequestHeader("content-type", content_type);
-	xhr.onload = function () {
-		if (xhr.status >= 200 && xhr.status < 400) {
-			var result = JSON.parse(xhr.response); /*json文字轉成物件*/
-			let token = result.token;
-			localStorage.setItem("token", token); /*把通行證token存在localStorage*/
-			window.location.replace("index.html");
-		} else {
-			let errorMessage = JSON.parse(xhr.response);
-			alert(errorMessage.message);
-		}
-	};
-	xhr.send(
-		JSON.stringify({
+	fetch(`${API_Url}/register`, {
+		method: "POST",
+		headers: {
+			"content-type": content_type,
+		},
+		body: JSON.stringify({
 			/*物件轉成文字json*/
 			nickname: nickname,
 			username: username,
 			password: password,
+		}),
+	})
+		.then((res) => res.json())
+		.then((result) => {
+			let token = result.token;
+			localStorage.setItem("token", token); /*把通行證token存在localStorage*/
+			window.location.replace("index.html");
 		})
-	);
+		.catch((errorMessage) => alert(errorMessage.message));
 });

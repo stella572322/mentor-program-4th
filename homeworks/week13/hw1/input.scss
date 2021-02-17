@@ -1,0 +1,347 @@
+$text-primary-color: rgb(202, 101, 101);
+$bg-primary-color: rgb(255 226 217 / 41%);
+$border-primary-color: rgb(202 101 101 / 46%);
+$box-shadow-primary-color: rgb(202 63 63);
+$hover-transform: scale(1.1);
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, ui-sans-serif;
+	box-sizing: border-box; /*border固定長寬，元素的實際大小會是 content + border + padding */
+}
+
+li {
+	list-style-type: none; /*去除點點*/
+}
+
+a {
+	cursor: pointer; /*箭頭游標手指頭*/
+	text-decoration: none;
+	color: #4a454a;
+	margin-right: 20px;
+}
+
+button {
+	border: none;
+	background: none;
+	text-decoration: none;
+	outline: none;
+	cursor: pointer; /*箭頭游標手指頭*/
+}
+
+/*navbar*/
+.nav_wrapper {
+	background: rgba(255, 226, 217, 0.81);
+	color: #4a454a;
+}
+
+.nav_title {
+	display: flex;
+	justify-content: center;
+	&_name {
+		text-align: center;
+		font-size: 50px;
+		margin-bottom: 30px;
+		padding-top: 40px;
+	}
+	&_list_left {
+		margin-right: 40px;
+	}
+	&_list_right {
+		margin-left: 40px;
+	}
+	&_list_left,
+	&_list_right {
+		display: flex;
+		margin-bottom: 20px;
+	}
+	& :hover {
+		color: $text-primary-color;
+	}
+}
+
+.nav_function {
+	color: $text-primary-color;
+}
+
+/*posts*/
+.main {
+	&_inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&_post {
+		width: 479px;
+		height: 583px;
+		border: 1px solid $border-primary-color;
+		margin-top: 32px;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+}
+
+.single {
+	&_main_post {
+		width: 479px;
+		border: 1px solid $border-primary-color;
+		margin-top: 32px;
+		border-radius: 5px;
+	}
+	&_post_content {
+		background: $bg-primary-color;
+		&_bottom {
+			padding: 10px;
+			width: 95%;
+		}
+	}
+}
+
+.post {
+	display: block;
+	&_img {
+		height: 358px;
+	}
+	&_title {
+		margin: 8px;
+		width: 95%;
+		max-height: 30px;
+		overflow: hidden auto;
+		color: $text-primary-color;
+	}
+	&_content {
+		height: 223px;
+		background: $bg-primary-color;
+		&_top {
+			padding-top: 8px;
+			display: flex;
+		}
+		&_bottom {
+			margin: 10px;
+			width: 95%;
+			max-height: 72px;
+			overflow: hidden auto;
+			& :hover {
+				color: $text-primary-color;
+			}
+		}
+	}
+}
+
+.nickname {
+	width: 430px;
+	display: block;
+	overflow: hidden;
+	white-space: pre;
+	text-overflow: ellipsis;
+}
+
+.avatar {
+	width: 39px;
+	height: 39px;
+	filter: invert(0.7);
+	margin-right: 5px;
+}
+
+.more_btn {
+	margin: 2px 0 0 10px;
+	color: $text-primary-color;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+/*footer*/
+footer {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	width: 100%;
+	height: 30px;
+	background: rgba(255, 226, 217, 0.81);
+	color: #4a454a;
+	& p {
+		margin: 6px auto;
+	}
+}
+
+/*pages*/
+.flex3 {
+	display: flex;
+	justify-content: center;
+	z-index: 6;
+	position: relative;
+	padding-top: 30px;
+}
+
+.pages {
+	& p {
+		font-size: 14px;
+		color: #898383;
+		padding: 0 25px;
+	}
+	& img {
+		padding-top: 4px;
+		width: 15px;
+		filter: invert(0.8); /*圖片反白*/
+		padding: 0 2px;
+		margin: 0 2px;
+	}
+}
+
+/*create_post*/
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.create {
+	&_nickname,
+	&_username,
+	&_password {
+		outline: none;
+		border: none;
+		box-shadow: 0 0 2px 0px $box-shadow-primary-color;
+		margin-bottom: 25px;
+		width: 100%;
+		&:focus {
+			outline: none;
+			border: none;
+			border-color: $text-primary-color;
+			box-shadow: 0 0 4px 0px $text-primary-color;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+	}
+	&_submit {
+		margin-right: 10px;
+		&:hover {
+			color: $text-primary-color;
+			transform: $hover-transform;
+		}
+	}
+	&_cancel {
+		margin-left: 10px;
+		&:hover {
+			color: $text-primary-color;
+			transform: $hover-transform;
+		}
+	}
+	&_form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&_label {
+		width: 351px;
+		margin: 50px 12px 12px 12px;
+		font-size: 25px;
+	}
+	&_post_content {
+		outline: none;
+		border: none;
+		box-shadow: 0 0 2px 0px $box-shadow-primary-color;
+		margin-bottom: 18px;
+		width: 220%;
+		&:focus {
+			outline: none;
+			border: none;
+			border-color: $text-primary-color;
+			box-shadow: 0 0 4px 0px $text-primary-color;
+			margin-bottom: 15px;
+			width: 220%;
+		}
+	}
+	&_post_title {
+		outline: none;
+		border: none;
+		box-shadow: 0 0 2px 0px $box-shadow-primary-color;
+		margin-bottom: 18px;
+		width: 220%;
+		:focus {
+			outline: none;
+			border: none;
+			border-color: $text-primary-color;
+			box-shadow: 0 0 4px 0px $text-primary-color;
+			margin-bottom: 15px;
+			width: 220%;
+		}
+	}
+}
+
+.section {
+	min-height: 550px;
+}
+
+/*register*/
+.register_label {
+	width: 50px;
+	margin: 126px 12px 12px 12px;
+	font-size: 25px;
+}
+
+/*posts_list*/
+.main_post_list {
+	width: 479px;
+	height: 147px;
+	border: 1px solid $border-primary-color;
+	margin-top: 32px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.post_list {
+	&_content {
+		height: 145px;
+		background: $bg-primary-color;
+	}
+	&_title {
+		margin: 8px;
+		width: 95%;
+		max-height: 30px;
+		overflow: hidden auto;
+		color: black;
+	}
+}
+
+/*backstage*/
+.update_button {
+	margin-left: -80px;
+	font-size: 22px;
+}
+
+.edit {
+	margin-right: -15px;
+	font-size: 15px;
+	&:hover {
+		color: $text-primary-color;
+		transform: $hover-transform;
+	}
+}
+
+.delete {
+	font-size: 15px;
+	&:hover {
+		color: $text-primary-color;
+		transform: $hover-transform;
+	}
+}
+
+@media (max-width: 768px) {
+	/*轉成RWD版*/
+	.nav_title {
+		flex-direction: column;
+		justify-content: unset;
+		align-items: center;
+	}
+
+	.nav_title_list_left {
+		margin-right: 0px;
+	}
+
+	.nav_title_list_right {
+		margin-left: 0;
+	}
+}
