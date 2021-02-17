@@ -9,24 +9,43 @@ let body = "";
 let createdAt = "";
 
 /*藉由id取得留言並顯示於編輯畫面中 */
+// function getCommentById() {
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.open("GET", `${API_Url}/comments/${id}`, true);
+// 	xhr.setRequestHeader("content-type", content_type);
+// 	xhr.onload = function () {
+// 		let textarea = document.querySelector("textarea");
+// 		let h3 = document.querySelector("h3");
+// 		if (xhr.status >= 200 && xhr.status < 400) {
+// 			var result = JSON.parse(xhr.response); /*json文字轉成物件*/
+// 			//console.log(result);
+// 			console.log(textarea);
+// 			console.log(textarea.value);
+// 			h3.innerText = result.nickname;
+// 			textarea.value = result.body;
+// 			//console.log(result.body);
+// 		}
+// 	};
+// 	xhr.send();
+// }
+
 function getCommentById() {
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", `${API_Url}/comments/${id}`, true);
-	xhr.setRequestHeader("content-type", content_type);
-	xhr.onload = function () {
-		let textarea = document.querySelector("textarea");
-		let h3 = document.querySelector("h3");
-		if (xhr.status >= 200 && xhr.status < 400) {
-			var result = JSON.parse(xhr.response); /*json文字轉成物件*/
-			//console.log(result);
+	let textarea = document.querySelector("textarea");
+	let h3 = document.querySelector("h3");
+	fetch(`${API_Url}/comments/${id}`, {
+		headers: {
+			"content-type": content_type,
+		},
+	})
+		.then((res) => res.json())
+		.then((result) => {
+			console.log(result);
 			console.log(textarea);
 			console.log(textarea.value);
 			h3.innerText = result.nickname;
 			textarea.value = result.body;
-			//console.log(result.body);
-		}
-	};
-	xhr.send();
+			console.log(result.body);
+		});
 }
 
 getCommentById();
@@ -39,20 +58,20 @@ document.querySelector(".edit_submit_btn").addEventListener("click", (e) => {
 		const textarea = document.querySelector("textarea");
 		//console.log(textarea.value);
 		const value = textarea.value;
-		var xhr = new XMLHttpRequest();
-		xhr.open("PATCH", `${API_Url}/comments/${id}`, true);
-		xhr.setRequestHeader("content-type", content_type);
-		xhr.onload = function () {
-			if (xhr.status >= 200 && xhr.status < 400) {
-				window.location.replace("index.html"); /*返回首頁*/
-			}
-		};
-		xhr.send(
-			JSON.stringify({
+		fetch(`${API_Url}/comments/${id}`, {
+			method: "PATCH",
+			headers: {
+				"content-type": content_type,
+			},
+			body: JSON.stringify({
 				/*物件轉成文字json*/
 				body: value,
-			})
-		);
+			}),
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				window.location.replace("index.html"); /*返回首頁*/
+			});
 	}
 });
 

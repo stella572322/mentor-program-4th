@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>部落格-註冊</title>
+		<!--將 CSS 另存為新的檔案 -->
+		<link rel="stylesheet" type="text/css" href="./main.css" />
+	</head>
+	<body>
+		<div class="nav_wrapper">
+			<nav class="navbar">
+				<p class="nav_title_name">Who's Blog</p>
+				<div class="nav_title">
+					<ul class="nav_title_list_left">
+            <li><a href="./index.html" class="nav_function">首頁</a></li>
+						<li>
+							<a href="./posts_list_page.html" class="nav_posts">文章列表</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<section class="section">
+			<div class="container">
+				<p class="register_label">註冊</p>
+				<form class="create_form">
+          <input
+            type="text"
+						class="create_nickname"
+						placeholder="暱稱"
+					></input>
+          <input
+            type="text"
+						class="create_username"
+						placeholder="帳號"
+          ></input>
+          <input
+            type="password"
+						class="create_password"
+						placeholder="密碼"
+					></input>
+        </form>
+        <div class="create_button">
+          <button class="create_submit">送出</button>
+          <button class="create_cancel">取消</button>
+        </div>
+			</div>
+		</section>
+		<script type="text/javascript" src="./register_page.js"></script>
+		<footer>
+			<p>© 2020 by The Who's Blog.</p>
+		</footer>
+	</body>
+</html>

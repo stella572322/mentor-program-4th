@@ -1,0 +1,336 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, ui-sans-serif;
+  box-sizing: border-box;
+  /*border固定長寬，元素的實際大小會是 content + border + padding */
+}
+
+li {
+  list-style-type: none;
+  /*去除點點*/
+}
+
+a {
+  cursor: pointer;
+  /*箭頭游標手指頭*/
+  text-decoration: none;
+  color: #4a454a;
+  margin-right: 20px;
+}
+
+button {
+  border: none;
+  background: none;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  /*箭頭游標手指頭*/
+}
+
+/*navbar*/
+.nav_wrapper {
+  background: rgba(255, 226, 217, 0.81);
+  color: #4a454a;
+}
+
+.nav_title {
+  display: flex;
+  justify-content: center;
+}
+.nav_title_name {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+  padding-top: 40px;
+}
+.nav_title_list_left {
+  margin-right: 40px;
+}
+.nav_title_list_right {
+  margin-left: 40px;
+}
+.nav_title_list_left, .nav_title_list_right {
+  display: flex;
+  margin-bottom: 20px;
+}
+.nav_title :hover {
+  color: #ca6565;
+}
+
+.nav_function {
+  color: #ca6565;
+}
+
+/*posts*/
+.main_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_post {
+  width: 479px;
+  height: 583px;
+  border: 1px solid rgba(202, 101, 101, 0.46);
+  margin-top: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.single_main_post {
+  width: 479px;
+  border: 1px solid rgba(202, 101, 101, 0.46);
+  margin-top: 32px;
+  border-radius: 5px;
+}
+.single_post_content {
+  background: rgba(255, 226, 217, 0.41);
+}
+.single_post_content_bottom {
+  padding: 10px;
+  width: 95%;
+}
+
+.post {
+  display: block;
+}
+.post_img {
+  height: 358px;
+}
+.post_title {
+  margin: 8px;
+  width: 95%;
+  max-height: 30px;
+  overflow: hidden auto;
+  color: #ca6565;
+}
+.post_content {
+  height: 223px;
+  background: rgba(255, 226, 217, 0.41);
+}
+.post_content_top {
+  padding-top: 8px;
+  display: flex;
+}
+.post_content_bottom {
+  margin: 10px;
+  width: 95%;
+  max-height: 72px;
+  overflow: hidden auto;
+}
+.post_content_bottom :hover {
+  color: #ca6565;
+}
+
+.nickname {
+  width: 430px;
+  display: block;
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+}
+
+.avatar {
+  width: 39px;
+  height: 39px;
+  filter: invert(0.7);
+  margin-right: 5px;
+}
+
+.more_btn {
+  margin: 2px 0 0 10px;
+  color: #ca6565;
+}
+.more_btn:hover {
+  transform: scale(1.1);
+}
+
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
+  background: rgba(255, 226, 217, 0.81);
+  color: #4a454a;
+}
+footer p {
+  margin: 6px auto;
+}
+
+/*pages*/
+.flex3 {
+  display: flex;
+  justify-content: center;
+  z-index: 6;
+  position: relative;
+  padding-top: 30px;
+}
+
+.pages p {
+  font-size: 14px;
+  color: #898383;
+  padding: 0 25px;
+}
+.pages img {
+  padding-top: 4px;
+  width: 15px;
+  filter: invert(0.8);
+  /*圖片反白*/
+  padding: 0 2px;
+  margin: 0 2px;
+}
+
+/*create_post*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_nickname, .create_username, .create_password {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px 0px #ca3f3f;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.create_nickname:focus, .create_username:focus, .create_password:focus {
+  outline: none;
+  border: none;
+  border-color: #ca6565;
+  box-shadow: 0 0 4px 0px #ca6565;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.create_submit {
+  margin-right: 10px;
+}
+.create_submit:hover {
+  color: #ca6565;
+  transform: scale(1.1);
+}
+.create_cancel {
+  margin-left: 10px;
+}
+.create_cancel:hover {
+  color: #ca6565;
+  transform: scale(1.1);
+}
+.create_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create_label {
+  width: 351px;
+  margin: 50px 12px 12px 12px;
+  font-size: 25px;
+}
+.create_post_content {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px 0px #ca3f3f;
+  margin-bottom: 18px;
+  width: 220%;
+}
+.create_post_content:focus {
+  outline: none;
+  border: none;
+  border-color: #ca6565;
+  box-shadow: 0 0 4px 0px #ca6565;
+  margin-bottom: 15px;
+  width: 220%;
+}
+.create_post_title {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px 0px #ca3f3f;
+  margin-bottom: 18px;
+  width: 220%;
+}
+.create_post_title :focus {
+  outline: none;
+  border: none;
+  border-color: #ca6565;
+  box-shadow: 0 0 4px 0px #ca6565;
+  margin-bottom: 15px;
+  width: 220%;
+}
+
+.section {
+  min-height: 550px;
+}
+
+/*register*/
+.register_label {
+  width: 50px;
+  margin: 126px 12px 12px 12px;
+  font-size: 25px;
+}
+
+/*posts_list*/
+.main_post_list {
+  width: 479px;
+  height: 147px;
+  border: 1px solid rgba(202, 101, 101, 0.46);
+  margin-top: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post_list_content {
+  height: 145px;
+  background: rgba(255, 226, 217, 0.41);
+}
+.post_list_title {
+  margin: 8px;
+  width: 95%;
+  max-height: 30px;
+  overflow: hidden auto;
+  color: black;
+}
+
+/*backstage*/
+.update_button {
+  margin-left: -80px;
+  font-size: 22px;
+}
+
+.edit {
+  margin-right: -15px;
+  font-size: 15px;
+}
+.edit:hover {
+  color: #ca6565;
+  transform: scale(1.1);
+}
+
+.delete {
+  font-size: 15px;
+}
+.delete:hover {
+  color: #ca6565;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  /*轉成RWD版*/
+  .nav_title {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+  }
+
+  .nav_title_list_left {
+    margin-right: 0px;
+  }
+
+  .nav_title_list_right {
+    margin-left: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
